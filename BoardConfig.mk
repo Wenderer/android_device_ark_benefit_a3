@@ -16,24 +16,20 @@
 FORCE_32_BIT := true
 
 include device/cyanogen/msm8916-common/BoardConfigCommon.mk
-DEVICE_PATH := device/wingtech/wt88047
+DEVICE_PATH := device/ark/benefit
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME :=
 
 # Kernel
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 BOARD_KERNEL_CMDLINE += phy-msm-usb.floated_charger_enable=1
-TARGET_KERNEL_SOURCE := kernel/wingtech/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_wt88047_defconfig
+TARGET_KERNEL_SOURCE := kernel/ark/benefit
+TARGET_KERNEL_CONFIG := cyanogenmod_benefit_defconfig
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 # CPU
 TARGET_CPU_CORTEX_A53 := true
-
-# WT88047 init
-TARGET_LIBINIT_MSM8916_DEFINES_FILE := $(DEVICE_PATH)/init/init_wt88047.cpp
-TARGET_UNIFIED_DEVICE := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -43,13 +39,12 @@ TARGET_CONTINUOUS_SPLASH_ENABLED := false
 
 # Charger
 BOARD_CHARGER_DISABLE_INIT_BLANK := true
-BOARD_HAL_STATIC_LIBRARIES := libhealthd.wt88047
+BOARD_HAL_STATIC_LIBRARIES := libhealthd.benefit
 
 # Camera
 BOARD_CAMERA_SENSORS := \
-    ov2680_5987fhq \
-    ov8865_q8v18a \
-    ov2680_skuhf
+    s5k4h5_8916 \
+    gc2355
 TARGET_USE_VENDOR_CAMERA_EXT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
@@ -57,7 +52,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_LDPRELOAD := libNimsWrap.so
 
 # Flags
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD -DCONFIG_WT88047_CAMERA -DCAMERA_VENDOR_L_COMPAT
+COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # GPS
 USE_DEVICE_SPECIFIC_GPS := true
@@ -87,4 +82,4 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # inherit from the proprietary version
--include vendor/wingtech/wt88047/BoardConfigVendor.mk
+-include vendor/ark/benefit/BoardConfigVendor.mk

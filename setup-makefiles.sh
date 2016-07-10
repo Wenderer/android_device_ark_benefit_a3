@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DEVICE=wt88047
-VENDOR=wingtech
+DEVICE=benefit
+VENDOR=ark
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
@@ -157,7 +157,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(TARGET_DEVICE),wt88047)
+ifeq (\$(TARGET_DEVICE),benefit)
 ifeq (\$(QCPATH),)
 
 include \$(CLEAR_VARS)

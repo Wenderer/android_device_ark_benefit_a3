@@ -1,5 +1,6 @@
-Device configuration for Redmi 2
+Device configuration for Benefit A3
 ==============================
 This device tree supports:
 
-    redmi2 (wt88047 variant)
+    ARK Benefit A3
+	Elephone Trunk
